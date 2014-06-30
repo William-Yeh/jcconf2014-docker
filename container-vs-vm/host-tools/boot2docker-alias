@@ -1,0 +1,6 @@
+#
+# SUMMARY: convenient alias for boot2docker users.
+# INSTALL: add this to your ~/.bash_profile or ~/.zshrc
+#
+
+alias adddockerhost='export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375 '
