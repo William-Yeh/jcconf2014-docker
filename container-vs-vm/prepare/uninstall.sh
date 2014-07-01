@@ -10,4 +10,4 @@ vagrant box remove $BOX_NAME
 rm -rf .vagrant
 
 echo Uninstalling Docker image: $IMAGE_NAME
-docker rmi -f $IMAGE_NAME
+sudo docker rmi -f $IMAGE_NAME
