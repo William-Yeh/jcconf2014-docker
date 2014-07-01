@@ -1,7 +1,7 @@
 #!/bin/bash
 
+BOX_NAME=`cat VAGRANT-BOX-NAME`
 BOX_FILE=demo-trusty-mongo.box
-BOX_NAME=williamyeh/demo/trusty-mongo
 
 
 vagrant up
