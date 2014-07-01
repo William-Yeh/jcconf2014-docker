@@ -2,6 +2,7 @@
 
 vagrant halt
 vagrant destroy
-#vagrant box remove williamyeh/demo/trusty-mongo
 rm -rf .vagrant
 
+sudo docker stop db1 db2
+sudo docker rm `sudo docker ps --no-trunc -a -q`

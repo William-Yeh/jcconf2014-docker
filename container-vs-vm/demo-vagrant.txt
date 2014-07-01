@@ -1,4 +1,14 @@
-#!/bin/bash
+#
+# Comparison: Vagrant case.
+# See recording: https://asciinema.org/a/10569
+#
+
+
+
+
+# system load, RAM, etc
+top
+
 
 #----------
 # start MongoDB VMs: "db1" & "db2"
@@ -9,23 +19,28 @@ vagrant up
 # check if they're really up
 vagrant status
 
+# how about the system load, RAM, etc. for now?
+top
+
 
 #----------
 # check if MongoDB servers are really up
 #----------
 
-# Step 0: "mongod" process visible on host OS?
+# Step 0: "mongod" process(es) visible on host OS?
 ps aux | grep mongod
 
+ps faux
 
-# Step 1: check db1 (port 27017)
+
+# Step 1: connect to db1 (port 27017)
 mongo --port 27017
 db.stats()
 db.memo.insert({ "name": "db1" })
 db.stats()
 exit
 
-# Step 2: check db2 (port 27018)
+# Step 2: connect to db2 (port 27018)
 mongo --port 27018
 db.stats()
 db.memo.insert({ "name": "db2" })
@@ -34,8 +49,11 @@ exit
 
 
 #
-# ssh into
+# ssh into VM "db1"
 #
 
 vagrant ssh db1
 
+top
+
+ps faux

@@ -4,17 +4,13 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "williamyeh/demo/trusty-mongo"
-
-  config.vm.synced_folder ".", "/vagrant"
+  config.vm.box = "local/demo/trusty-mongo"
 
   config.vm.define "db1" do |db1|
-    #db1.vm.hostname="db1"
     db1.vm.network "forwarded_port", guest: 27017, host: 27017, auto_correct: true
   end
 
   config.vm.define "db2" do |db2|
-    #db2.vm.hostname="db2"
     db2.vm.network "forwarded_port", guest: 27017, host: 27018, auto_correct: true
   end
 

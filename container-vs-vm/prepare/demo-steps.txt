@@ -1,7 +1,8 @@
 #
 # Prepare Vagrant & Docker environment for experiment.
-# See https://asciinema.org/a/10568 for recording.
+# See recording: https://asciinema.org/a/10568
 #
+
 
 
 

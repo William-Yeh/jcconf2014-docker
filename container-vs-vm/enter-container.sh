@@ -25,7 +25,7 @@ readonly CMD=${2:-/bin/bash}
 function main() {
     check_cmdline_args
 
-    local pid=`docker inspect --format '{{ .State.Pid }}' $CONTAINER_NAME`
+    local pid=`sudo docker inspect --format '{{ .State.Pid }}' $CONTAINER_NAME`
     sudo nsenter --mount --uts --net --ipc --pid  --target $pid  $CMD
 }
 
