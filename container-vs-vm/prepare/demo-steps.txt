@@ -1,0 +1,31 @@
+# Let's see which host OS we're in...
+lsb_release -a
+
+
+# Now let's prepare environment for experiment...
+cd prepare
+
+ls -al
+
+
+#---
+
+
+# First, let's prepare environment for Vagrant.
+# This may take minutes...
+./prepare-vagrant.sh
+
+#---
+
+
+# Second, let's prepare environment for Docker.
+# This may take minutes...
+./prepare-docker.sh
+
+
+---
+
+# Someday if you'd like to undo previous steps...
+./uninstall.sh
+
+
