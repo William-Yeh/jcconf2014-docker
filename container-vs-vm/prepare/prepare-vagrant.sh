@@ -11,4 +11,4 @@ vagrant box list
 
 
 rm $BOX_FILE
-vagrant destroy
+vagrant destroy --force
