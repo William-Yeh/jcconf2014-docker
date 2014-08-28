@@ -8,7 +8,7 @@ Supplemental materials for my [Docker speech at JCConf Taiwan 2014](http://jccon
 
 ## 講題介紹
 
-2013 年三月，Docker 0.1.0 首次對外亮相，短短 15 個月就推出 1.0 版，並獲得各主流 Linux 及 IaaS/PaaS 大廠的強力背書。
+2013 年三月，[Docker 0.1.0](https://github.com/docker/docker/tree/v0.1.0) 首次對外亮相，短短 15 個月就推出 [1.0 版](https://github.com/docker/docker/tree/v1.0.0)，並獲得各主流 Linux 及 IaaS/PaaS 大廠的強力背書。
 
 只要照著 Docker 的 “infrastructure as code” 遊戲規則，程式只要在本機端寫好測好，後續的組態管理、持續整合、部署等各個 DevOps 環節，都透過同一套 Docker repository 機制，使用同一份系統映像檔，不再有惱人的 dependency hell 問題。
 
