@@ -1,0 +1,25 @@
+VAGRANTFILE_API_VERSION = "2"
+
+#
+# provision script; pull Docker image
+#
+docker_image = "williamyeh/show-kernel-info"
+$script = <<SCRIPT
+echo Downloading Docker image: \'#{docker_image}\'...
+echo This may take minutes...
+
+docker pull #{docker_image}
+if [[ $? -eq 0 ]]; then
+  echo Done.
+else
+  echo ERROR when pulling Docker image!
+fi
+SCRIPT
+
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "williamyeh/ubuntu-trusty64-docker"
+  config.vm.synced_folder "..", "/vagrant"
+
+  config.vm.provision :shell, :inline => $script
+end
