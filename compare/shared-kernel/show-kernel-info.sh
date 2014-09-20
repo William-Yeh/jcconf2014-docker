@@ -10,16 +10,17 @@ DEBIAN_VERSION=/etc/debian_version
 
 
 echo $1
+echo Queried at date: `date '+%Y-%m-%dT%H:%M:%S%:z'`
 
 echo
-echo "--> [Date]"
-date '+%Y-%m-%dT%H:%M:%S%:z'
-
+echo "===== KERNEL SPACE ====="
 
 echo
 echo "--> [Kernel info]"
 uname -a
 
+echo
+echo "===== USERLAND ====="
 
 echo
 echo "--> [File info] Linux version in general"
@@ -32,7 +33,7 @@ fi
 
 
 echo
-echo "--> [File info] CentOS version"
+echo "--> [File info] RHEL/CentOS version"
 if [[ -e $REDHAT_RELEASE ]]; then
     ls -al $REDHAT_RELEASE
     cat $REDHAT_RELEASE
