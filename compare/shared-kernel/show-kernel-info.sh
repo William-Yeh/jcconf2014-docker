@@ -51,3 +51,7 @@ else
     echo "Not found"
 fi
 
+
+echo
+echo "--> [File info] root /"
+ls -al /
