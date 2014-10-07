@@ -1,0 +1,17 @@
+VAGRANTFILE_API_VERSION = "2"
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "ubuntu/trusty64"
+
+  config.vm.provision "shell", path: "install-redis.sh"
+
+  config.vm.define "redis1" do |redis|
+    redis.vm.network "forwarded_port",
+      guest: 6379, host: 6379, auto_correct: true
+  end
+
+  config.vm.define "redis2" do |redis|
+    redis.vm.network "forwarded_port",
+      guest: 6379, host: 16379, auto_correct: true
+  end
+
+end
