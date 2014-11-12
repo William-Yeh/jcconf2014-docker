@@ -3,6 +3,9 @@
 
 This directory is to demostrate the "shared kernel" and root file system features of Docker, using [show-kernel-info.sh](show-kernel-info.sh) as example.
 
+To run all experiments in this directory, [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www.vagrantup.com/) should be installed first. You may read my [Vagrant Tutorials](http://www.codedata.com.tw/social-coding/vagrant-tutorial-1-developer-and-vm/) series for more information about Vagrant.
+
+
 
 
 ## For the impatient

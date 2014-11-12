@@ -8,7 +8,7 @@ This file lists software required for trying out experiments in this directory.
 Linux + Docker engine.
 
 
-- If you have no idea which Linux distribution to use, try [Ubuntu 14.04 LTS ("Trusty")](http://releases.ubuntu.com/14.04/) desktop edition.
+- If you have no idea which Linux distribution to use, try [Ubuntu 14.04.1 LTS ("Trusty")](http://releases.ubuntu.com/14.04/) desktop edition.
 
 - Docker: see [installation guide](https://docs.docker.com/installation/).
 
