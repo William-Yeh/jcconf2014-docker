@@ -1,0 +1,19 @@
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+    config.vm.box = "williamyeh/ubuntu-trusty64-docker"
+    config.vm.box_version = ">= 1.3.1"
+
+    config.vm.provision "docker", 
+        images: [
+            "williamyeh/wrk:latest",
+            "williamyeh/spray-httpserver:latest"
+        ]
+
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "2048"]
+    end
+
+end

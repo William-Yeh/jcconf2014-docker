@@ -39,3 +39,4 @@ Docker 運用容器化技術，比傳統 hypervisor 虛擬化技術更輕量，�
 
 **Standard** 主題：
 
+  - 會用到 [linked-example 目錄](linked-example/)。
