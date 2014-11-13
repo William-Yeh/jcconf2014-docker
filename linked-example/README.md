@@ -1,7 +1,7 @@
 # "Linked containers" feature of Docker
 
 
-This directory is to demostrate the "linked containers" feature of Docker, using [wrk](https://github.com/William-Yeh/docker-wrk) (written in C), [Spray](https://github.com/William-Yeh/Docker-Spray-HttpServer) (written in Scala), and [Fluentd](https://github.com/William-Yeh/docker-fluentd) (written in Ruby) as example.
+This directory is to demostrate the "linked containers" feature of Docker, using [wrk](https://github.com/William-Yeh/docker-wrk) (written in C and Lua), [Spray](https://github.com/William-Yeh/Docker-Spray-HttpServer) (written in Scala), and [Fluentd](https://github.com/William-Yeh/docker-fluentd) (written in Ruby) as example.
 
 
 
