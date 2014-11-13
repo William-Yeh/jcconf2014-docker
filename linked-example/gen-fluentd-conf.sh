@@ -29,16 +29,37 @@ readonly POS_FILE_FULLPATH=$POS_FILE_DIRECTORY/$CONTAINER_ID-json.log.pos
 
 cat <<EOF
 <source>
-  type      tail
-  format    json
-  time_key  time
-  path      $LOG_FULLPATH
-  pos_file  $POS_FILE_FULLPATH
-  tag       docker.$CONTAINER_NAME.$CONTAINER_ID
-  rotate_wait 5
+    type         tail
+    format       json
+    time_key     time
+    time_format  %Y-%m-%dT%H:%M:%S.%L
+
+    path         $LOG_FULLPATH
+    pos_file     $POS_FILE_FULLPATH
+    rotate_wait  5
+
+    tag          docker.$CONTAINER_NAME.$CONTAINER_ID
 </source>
 
+
 <match docker.**>
-    type stdout
+    type copy
+
+    <store>
+        # for debug (see /var/log/td-agent.log)
+        type stdout
+    </store>
+
+    <store>
+        # @see https://github.com/uken/fluent-plugin-elasticsearch
+        type elasticsearch
+
+        #host localhost
+        #port 9200
+        logstash_format  true
+        logstash_prefix  docker.spray
+        include_tag_key  true
+        tag_key          _key
+    </store>
 </match>
 EOF

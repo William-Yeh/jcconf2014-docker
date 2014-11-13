@@ -1,7 +1,7 @@
 # "Linked containers" feature of Docker
 
 
-This directory is to demostrate the "linked containers" feature of Docker, using [wrk](https://github.com/William-Yeh/docker-wrk) (written in C and Lua), [Spray](https://github.com/William-Yeh/Docker-Spray-HttpServer) (written in Scala), and [Fluentd](https://github.com/William-Yeh/docker-fluentd) (written in Ruby) as example.
+This directory is to demostrate the "linked containers" feature of Docker, using [wrk](https://github.com/William-Yeh/docker-wrk) (written in C and Lua), [Spray](https://github.com/William-Yeh/Docker-Spray-HttpServer) (written in Scala), [Fluentd](https://github.com/William-Yeh/docker-fluentd) (written in Ruby), and [Elasticsearch + Kibana](http://www.elasticsearch.org/overview/kibana/) (written in Java) as example.
 
 
 
@@ -18,6 +18,7 @@ Prepare environments for experiment.
   $ docker pull williamyeh/wrk:latest
   $ docker pull williamyeh/spray-httpserver:latest
   $ docker pull williamyeh/fluentd:latest
+  $ docker pull digitalwonderland/elasticsearch:latest
   ```
 
 
@@ -64,7 +65,8 @@ Prepare environments for experiment.
 5. Use `wrk` to benchmark the http server, with random IPs as input:
 
    ```
-   $ docker run --link spray:httpserver  -v `pwd`:/data  \
+   $ docker run --link spray:httpserver  \
+         -v `pwd`:/data  \
          williamyeh/wrk  -s wrk-script.lua  http://httpserver:8080/
    ```
 
@@ -83,8 +85,25 @@ Prepare environments for experiment.
         -v /var/lib/docker/containers:/var/lib/docker/containers:ro  \
         -v `pwd`:/etc/td-agent:ro   \
         -v `pwd`:/data              \
+        --net=host                  \
         williamyeh/fluentd  start
    ```
 
 
 8. Re-run previous `wrk` task to see the `fluentd` output!
+
+
+9. Start the `Elasticsearch` server:
+
+   ```
+   $ docker run -d --rm --name elasticsearch  \
+         -p 9200:9200  \
+         digitalwonderland/elasticsearch
+   ```
+
+
+10. Use browser to open the Kibana page: 
+    http://localhost:9200/_plugin/kibana3/
+
+
+11. You may also re-run previous `wrk` task to see the Kibana dashboard!

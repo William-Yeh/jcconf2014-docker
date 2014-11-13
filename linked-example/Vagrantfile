@@ -9,7 +9,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         images: [
             "williamyeh/wrk:latest",
             "williamyeh/spray-httpserver:latest",
-            "williamyeh/fluentd:latest"
+            "williamyeh/fluentd:latest",
+            "digitalwonderland/elasticsearch:latest"
         ]
 
     config.vm.provider "virtualbox" do |vb|
