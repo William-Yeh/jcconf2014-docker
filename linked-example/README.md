@@ -96,13 +96,13 @@ Prepare environments for experiment.
 9. Start the `Elasticsearch` server:
 
    ```
-   $ docker run -d --rm --name elasticsearch  \
+   $ docker run -d  --name elasticsearch  \
          -p 9200:9200  \
          digitalwonderland/elasticsearch
    ```
 
 
-10. Use browser to open the Kibana page: 
+10. Use browser to open the Kibana page:
     http://localhost:9200/_plugin/kibana3/
 
 
