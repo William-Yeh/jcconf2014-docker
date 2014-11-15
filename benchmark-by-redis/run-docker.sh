@@ -8,7 +8,8 @@ OUTPUT=${2:-result.docker}
 
 
 echo "==> Start the Redis server..."
-docker run -d  --name redis  williamyeh/redis  start
+docker run -d  --name redis  -v `pwd`:/data  williamyeh/redis  start
+#docker run -d  --name redis  williamyeh/redis  start
 
 
 echo "==> Warm up Redis server..."
