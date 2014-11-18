@@ -6,6 +6,12 @@ This directory is to demostrate the "linked containers" feature of Docker, using
 ![Overview of the demo](./flows.png "Overview of the demo")
 
 
+
+## For the impatient
+
+See my screencast: ["Linked containers" features of Docker](http://youtu.be/ElfjCrttLpE).
+
+
 ## Preparation
 
 Prepare environments for experiment.
