@@ -5,6 +5,10 @@ Docker，最接近 "Build Once, Run Anywhere" 的輕量級虛擬技術
 
 Supplemental materials for my [Docker speech at JCConf Taiwan 2014](http://jcconf.tw/docker-most-write-once-run-anywhere.html).
 
+**[Update]** Slide available: http://bit.ly/jcconf2014-docker
+
+**[Update]** Video available: http://youtu.be/H7YybGgy_0Y
+
 
 ## 講題介紹
 
